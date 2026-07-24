@@ -14,11 +14,12 @@ config/name="Simple Platformer Demo"
 config/description="✨ Simple Platformer Demo ✨
 😎 - Best for beginners and your first game
 🕹️ - Better controls with TouchScreen"
-config/version="3.2"
+config/version="3.4"
 run/main_scene="uid://dogn5ob1qlnvq"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 run/max_fps=60
 boot_splash/bg_color=Color(1, 1, 1, 1)
+config/icon="uid://chbnoto6syd5h"
 boot_splash/image="uid://ooi1u46dnw01"
 
 [audio]
@@ -31,6 +32,7 @@ CoinSfx="*uid://conlpjj7s81mr"
 DamageSfx="*uid://dsfc5doqb22k2"
 DetSfx="*uid://c1nxby52rshc3"
 JumpSfx="*uid://cititixminc7o"
+Success="*uid://yr5kt60k1ynl"
 
 [display]
 

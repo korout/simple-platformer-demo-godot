@@ -10,10 +10,9 @@ var over: bool
 
 func _ready():
 	get_tree().paused = false
-	$AnimationPlayer.play("fade_in")
 
 func _physics_process(delta):
-	if Input.is_action_just_released("ui_cancel"):
+	if Input.is_action_just_released("ui_cancel") and not over and not win:
 		get_tree().paused = true
 		ui.get_node("Pause/PauseMenuAnimation").speed_scale = 1
 		ui.get_node("Pause/PauseMenuAnimation").play("new_animation")
@@ -22,7 +21,6 @@ func _physics_process(delta):
 	if over and $Los.is_stopped():
 		$"/root/DamageSfx".play()
 		$Los.start()
-		$AnimationPlayer.play("fade_out")
 	
 	if win:
 		player.velocity = Vector2(0, 0)
@@ -47,5 +45,8 @@ func _on_los_timeout():
 func _on_win_area_body_entered(body):
 	if body.name == "Player":
 		win = true
-		$AnimationPlayer.play("fade_out")
+		ui.get_node("Complete").show()
+		ui.get_node("Complete/CompleteAnimation").play("new_animation")
+		$"/root/Success".play()
+		$Los.wait_time = 4
 		$Los.start()
