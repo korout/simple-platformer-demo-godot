@@ -14,7 +14,8 @@ config/name="Simple Platformer Demo"
 config/description="✨ Simple Platformer Demo ✨
 😎 - Best for beginners and your first game
 🕹️ - Better controls with TouchScreen"
-run/main_scene="uid://dkech5tm205l6"
+config/version="3.2"
+run/main_scene="uid://dogn5ob1qlnvq"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 run/max_fps=60
 boot_splash/bg_color=Color(1, 1, 1, 1)
@@ -59,3 +60,5 @@ textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true
