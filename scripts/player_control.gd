@@ -12,7 +12,7 @@ var coin: int
 @export var level_mgr: Node
 
 func _physics_process(delta):
-	if not level_mgr.over:
+	if not level_mgr.over and not level_mgr.win:
 		velocity.x = move_toward(velocity.x, SPEED * Input.get_axis("ui_left", "ui_right"), 20)
 		if velocity.x != 0:
 			if is_on_floor(): $Body.play("walk")

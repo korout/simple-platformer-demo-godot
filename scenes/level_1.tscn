@@ -304,9 +304,6 @@ position = Vector2(288, 56)
 
 [node name="Ui" parent="." unique_id=139903261 instance=ExtResource("5_fcfvj")]
 
-[node name="ColorRect" parent="Ui" index="2" unique_id=664612680]
-visible = true
-
 [node name="LevelManager" parent="." unique_id=17573122 node_paths=PackedStringArray("player", "ui") instance=ExtResource("8_15mv3")]
 player = NodePath("../Player")
 ui = NodePath("../Ui")
