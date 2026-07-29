@@ -13,8 +13,10 @@ config_version=5
 config/name="Simple Platformer Demo"
 config/description="✨ Simple Platformer Demo ✨
 😎 - Best for beginners and your first game
-🕹️ - Better controls with TouchScreen"
-config/version="3.4"
+🕹️ - Better controls with TouchScreen
+
+The game assets uses Kenney's Pixel Platformer (CC0)"
+config/version="v4.0.1"
 run/main_scene="uid://dogn5ob1qlnvq"
 config/quit_on_go_back=false
 config/features=PackedStringArray("4.7", "GL Compatibility")
