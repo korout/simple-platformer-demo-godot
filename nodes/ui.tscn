@@ -2,7 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://df0k7tqbv6ygx" path="res://sprites/tilemap.png" id="1_gdt2y"]
 [ext_resource type="Texture2D" uid="uid://cx84px1x0kra4" path="res://icons/arrow.png" id="3_8dubc"]
+[ext_resource type="Texture2D" uid="uid://8djleqcuooe0" path="res://icons/pause.png" id="4_m6oha"]
 [ext_resource type="Texture2D" uid="uid://cprdjoq35r5fd" path="res://icons/arrow_press.png" id="4_p7vwb"]
+[ext_resource type="Texture2D" uid="uid://cj45karpsbh8i" path="res://icons/pause_press.png" id="5_khow0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_15mv3"]
 atlas = ExtResource("1_gdt2y")
@@ -386,11 +388,11 @@ metadata/_edit_lock_ = true
 layout_mode = 0
 offset_left = 26.0
 offset_top = 6.0
-offset_right = 85.999886
+offset_right = 85.99989
 offset_bottom = 28.00003
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.6)
 theme_override_constants/outline_size = 3
-theme_override_constants/shadow_outline_size = 0
+theme_override_constants/shadow_outline_size = 3
 theme_override_font_sizes/font_size = 8
 text = "c"
 vertical_alignment = 1
@@ -412,7 +414,7 @@ scale = Vector2(2, 2)
 texture_normal = ExtResource("3_8dubc")
 texture_pressed = ExtResource("4_p7vwb")
 passby_press = true
-action = "ui_left"
+action = "left"
 visibility_mode = 1
 
 [node name="Right" type="TouchScreenButton" parent="Game/Mobile" unique_id=1150517981]
@@ -422,7 +424,7 @@ scale = Vector2(2, 2)
 texture_normal = ExtResource("3_8dubc")
 texture_pressed = ExtResource("4_p7vwb")
 passby_press = true
-action = "ui_right"
+action = "right"
 visibility_mode = 1
 
 [node name="Jump" type="TouchScreenButton" parent="Game/Mobile" unique_id=1825768342]
@@ -431,15 +433,16 @@ scale = Vector2(2, 2)
 texture_normal = ExtResource("3_8dubc")
 texture_pressed = ExtResource("4_p7vwb")
 passby_press = true
-action = "ui_accept"
+action = "jump"
 visibility_mode = 1
 
 [node name="Pause" type="TouchScreenButton" parent="Game/Mobile" unique_id=548878766]
 position = Vector2(297, 4)
-texture_normal = ExtResource("3_8dubc")
-texture_pressed = ExtResource("4_p7vwb")
+scale = Vector2(1.0526316, 1.0526316)
+texture_normal = ExtResource("4_m6oha")
+texture_pressed = ExtResource("5_khow0")
 passby_press = true
-action = "ui_cancel"
+action = "pause"
 visibility_mode = 1
 
 [node name="Pause" type="Control" parent="." unique_id=1646489697]

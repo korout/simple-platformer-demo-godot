@@ -341,29 +341,27 @@ metadata/_edit_lock_ = true
 
 [node name="BlockAppear" parent="Envi/Appears" unique_id=2031801262 instance=ExtResource("5_y0kc7")]
 position = Vector2(968, 88)
-appear_time = 2.0
+start_time = 2.0
+appear_time = 4.0
 
 [node name="BlockAppear2" parent="Envi/Appears" unique_id=1254320400 instance=ExtResource("5_y0kc7")]
 position = Vector2(1032, 88)
-start_time = 2.0
-appear_time = 2.0
+start_time = 4.0
+appear_time = 4.0
 
 [node name="BlockAppear3" parent="Envi/Appears" unique_id=1519982087 instance=ExtResource("5_y0kc7")]
 position = Vector2(1096, 56)
-start_time = 3.0
-appear_time = 2.0
+start_time = 6.0
+appear_time = 4.0
 
 [node name="Ui" parent="." unique_id=139903261 instance=ExtResource("5_que50")]
-
-[node name="ColorRect" parent="Ui" index="2" unique_id=664612680]
-visible = true
 
 [node name="LevelManager" parent="." unique_id=17573122 node_paths=PackedStringArray("player", "ui") instance=ExtResource("6_hey2k")]
 player = NodePath("../Player")
 ui = NodePath("../Ui")
-change_lev = "res://scenes/level_3.tscn"
+change_level = "res://scenes/main_menu.tscn"
 
-[node name="WinArea" parent="LevelManager" index="2" unique_id=1519543442]
+[node name="WinArea" parent="LevelManager" index="1" unique_id=1519543442]
 position = Vector2(1592, 97)
 
 [connection signal="pressed" from="Ui/Pause/Panel/HBoxContainer/Play" to="LevelManager" method="_on_pm_play_pressed"]

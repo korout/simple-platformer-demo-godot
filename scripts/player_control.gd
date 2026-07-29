@@ -13,7 +13,7 @@ var coin: int
 
 func _physics_process(delta):
 	if not level_mgr.over and not level_mgr.win:
-		velocity.x = move_toward(velocity.x, SPEED * Input.get_axis("ui_left", "ui_right"), 20)
+		velocity.x = move_toward(velocity.x, SPEED * Input.get_axis("left", "right"), 20)
 		if velocity.x != 0:
 			if is_on_floor(): $Body.play("walk")
 			$Body.flip_h = velocity.x > 0
@@ -22,7 +22,7 @@ func _physics_process(delta):
 	else:
 		velocity = Vector2(0, 0)
 	
-	if Input.is_action_just_pressed("ui_accept") and perform_jump and not level_mgr.over:
+	if Input.is_action_just_pressed("jump") and perform_jump and not level_mgr.over:
 		velocity.y = JUMP_VELOCITY
 		perform_jump = false
 		$Body.scale = Vector2(0.5, 1.5)

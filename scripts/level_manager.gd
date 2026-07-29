@@ -6,13 +6,13 @@ extends Node
 var win: bool
 var over: bool
 
-@export var change_lev: String
+@export var change_level: String
 
 func _ready():
 	get_tree().paused = false
 
 func _physics_process(delta):
-	if Input.is_action_just_released("ui_cancel") and not over and not win:
+	if Input.is_action_just_released("pause") and not over and not win:
 		get_tree().paused = true
 		ui.get_node("Pause/PauseMenuAnimation").speed_scale = 1
 		ui.get_node("Pause/PauseMenuAnimation").play("new_animation")
@@ -39,7 +39,7 @@ func _on_reset_pressed():
 	get_tree().reload_current_scene()
 
 func _on_los_timeout():
-	if win: get_tree().change_scene_to_file(change_lev)
+	if win: get_tree().change_scene_to_file(change_level)
 	if over: get_tree().reload_current_scene()
 
 func _on_win_area_body_entered(body):
