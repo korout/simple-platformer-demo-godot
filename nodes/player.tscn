@@ -3,50 +3,50 @@
 [ext_resource type="Script" uid="uid://c2r7gs76n4308" path="res://scripts/player_control.gd" id="1_bms3g"]
 [ext_resource type="Texture2D" uid="uid://bsyvk33wxoap4" path="res://sprites/character.png" id="2_me0cc"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pa8r4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_me0cc"]
 atlas = ExtResource("2_me0cc")
-region = Rect2(0, 0, 24, 24)
+region = Rect2(144, 0, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_014kd"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bms3g"]
 atlas = ExtResource("2_me0cc")
-region = Rect2(24, 0, 24, 24)
+region = Rect2(168, 0, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rus8k"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqdnm"]
 atlas = ExtResource("2_me0cc")
-region = Rect2(0, 0, 24, 24)
+region = Rect2(144, 0, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5xbjy"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lbay"]
 atlas = ExtResource("2_me0cc")
-region = Rect2(24, 0, 24, 24)
+region = Rect2(168, 0, 24, 24)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_4nkto"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_g7b7a"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pa8r4")
+"texture": SubResource("AtlasTexture_me0cc")
 }],
 "loop": 1,
 "name": &"idle",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_014kd")
+"texture": SubResource("AtlasTexture_bms3g")
 }],
 "loop": 1,
 "name": &"jump",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rus8k")
+"texture": SubResource("AtlasTexture_hqdnm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5xbjy")
+"texture": SubResource("AtlasTexture_7lbay")
 }],
 "loop": 1,
 "name": &"walk",
-"speed": 12.0
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bms3g"]
@@ -61,11 +61,9 @@ limit_left = 0
 limit_top = 0
 limit_bottom = 0
 
-[node name="Body" type="AnimatedSprite2D" parent="." unique_id=1164901706]
-position = Vector2(0, 12)
-sprite_frames = SubResource("SpriteFrames_4nkto")
-animation = &"walk"
-offset = Vector2(0, -12)
+[node name="Body" type="AnimatedSprite2D" parent="." unique_id=890911953]
+sprite_frames = SubResource("SpriteFrames_g7b7a")
+animation = &"jump"
 flip_h = true
 
 [node name="Coll" type="CollisionShape2D" parent="." unique_id=897542224]
