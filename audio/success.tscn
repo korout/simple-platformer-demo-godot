@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://yr5kt60k1ynl"]
+
+[ext_resource type="AudioStream" uid="uid://65qkl56i4cpw" path="res://audio/success.ogg" id="1_e4qjo"]
+
+[node name="Success" type="AudioStreamPlayer" unique_id=1408755281]
+stream = ExtResource("1_e4qjo")

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cititixminc7o"]
+
+[ext_resource type="AudioStream" uid="uid://dl4hs1n5xnmb4" path="res://audio/jump.ogg" id="1_3k3nt"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_y0kc7"]
+random_pitch = 1.0905077
+streams_count = 1
+stream_0/stream = ExtResource("1_3k3nt")
+
+[node name="Jump" type="AudioStreamPlayer" unique_id=399275590]
+stream = SubResource("AudioStreamRandomizer_y0kc7")
+bus = &"Sfx"

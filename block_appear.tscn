@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dxwwykdfawx1f" path="res://scripts/block_appear.gd" id="1_4f3bv"]
 [ext_resource type="Texture2D" uid="uid://df0k7tqbv6ygx" path="res://sprites/tilemap.png" id="1_kcpww"]
-[ext_resource type="AudioStream" uid="uid://3bbb518sfv65" path="res://audio/block_appear.wav" id="2_4f3bv"]
+[ext_resource type="AudioStream" uid="uid://dkhliv5678b34" path="res://audio/block_appear.ogg" id="3_4f3bv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m32vx"]
 size = Vector2(18, 18)
@@ -22,7 +22,7 @@ one_way_collision = true
 metadata/_edit_lock_ = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=801962005]
-stream = ExtResource("2_4f3bv")
+stream = ExtResource("3_4f3bv")
 max_distance = 300.0
 panning_strength = 3.0
 bus = &"Sfx"

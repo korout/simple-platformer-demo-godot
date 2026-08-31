@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cqhj7yc3vf1q"]
+
+[ext_resource type="AudioStream" uid="uid://l7v8aqkq8vpc" path="res://audio/press.ogg" id="1_syo37"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_y0kc7"]
+random_pitch = 1.122462
+streams_count = 1
+stream_0/stream = ExtResource("1_syo37")
+
+[node name="Press" type="AudioStreamPlayer" unique_id=646926093]
+stream = SubResource("AudioStreamRandomizer_y0kc7")
