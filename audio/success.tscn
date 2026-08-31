@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://yr5kt60k1ynl"]
-
-[ext_resource type="AudioStream" uid="uid://lno0ygtg63v3" path="res://audio/success.wav" id="1_wfgo7"]
-
-[node name="Success" type="AudioStreamPlayer" unique_id=1408755281]
-stream = ExtResource("1_wfgo7")
