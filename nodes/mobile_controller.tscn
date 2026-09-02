@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://b4df1fd1gqgo3"]
+
+[sub_resource type="GDScript" id="GDScript_gmirc"]
+script/source = "extends Node
+
+func _ready() -> void:
+	$CanvasLayer.visible = OS.has_feature(\"mobile\")
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gmirc"]
+bg_color = Color(0, 0, 0, 0.5019608)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+corner_detail = 20
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3q8b2"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+corner_detail = 20
+anti_aliasing = false
+
+[sub_resource type="Gradient" id="Gradient_0bltd"]
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0bltd"]
+gradient = SubResource("Gradient_0bltd")
+width = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j08b3"]
+bg_color = Color(0, 0, 0, 0.5)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+corner_detail = 20
+anti_aliasing = false
+
+[sub_resource type="Gradient" id="Gradient_jr46f"]
+colors = PackedColorArray(0, 0, 0, 0.5, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3yeh4"]
+gradient = SubResource("Gradient_jr46f")
+width = 1
+
+[node name="MobileController" type="Node" unique_id=988296813]
+process_mode = 3
+script = SubResource("GDScript_gmirc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=142609594]
+layer = 100
+
+[node name="VirtualJoystick" type="VirtualJoystick" parent="CanvasLayer" unique_id=206945520]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -80.0
+offset_right = 80.0
+grow_vertical = 0
+theme_override_styles/normal_joystick = SubResource("StyleBoxFlat_gmirc")
+theme_override_styles/normal_tip = SubResource("StyleBoxFlat_3q8b2")
+theme_override_styles/pressed_joystick = SubResource("StyleBoxFlat_gmirc")
+theme_override_styles/pressed_tip = SubResource("StyleBoxFlat_3q8b2")
+joystick_size = 48.0
+tip_size = 24.0
+action_left = &"left"
+action_right = &"right"
+action_up = &"up"
+action_down = &"down"
+metadata/_edit_lock_ = true
+
+[node name="A" type="TouchScreenButton" parent="CanvasLayer" unique_id=10449064]
+position = Vector2(232.00002, 128)
+scale = Vector2(39.999985, 40)
+texture_normal = SubResource("GradientTexture1D_0bltd")
+action = "a"
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="CanvasLayer/A" unique_id=549737143]
+offset_right = 1.0
+offset_bottom = 1.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_j08b3")
+metadata/_edit_lock_ = true
+
+[node name="B" type="TouchScreenButton" parent="CanvasLayer" unique_id=1501480984]
+position = Vector2(272, 88.00001)
+scale = Vector2(39.999985, 40)
+texture_normal = SubResource("GradientTexture1D_0bltd")
+action = "b"
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="CanvasLayer/B" unique_id=1166912843]
+offset_right = 1.0
+offset_bottom = 1.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_j08b3")
+metadata/_edit_lock_ = true
+
+[node name="Start" type="TouchScreenButton" parent="CanvasLayer" unique_id=1491392223]
+position = Vector2(164, 156)
+scale = Vector2(56.000008, 15.999987)
+texture_normal = SubResource("GradientTexture1D_3yeh4")
+action = "start"
+metadata/_edit_lock_ = true
+
+[node name="Select" type="TouchScreenButton" parent="CanvasLayer" unique_id=2087035429]
+position = Vector2(100, 156)
+scale = Vector2(55.999977, 15.999987)
+texture_normal = SubResource("GradientTexture1D_3yeh4")
+action = "select"
+metadata/_edit_lock_ = true
+
+[node name="LabelStart" type="Label" parent="CanvasLayer" unique_id=172664616]
+offset_left = 164.0
+offset_top = 156.0
+offset_right = 220.0
+offset_bottom = 172.0
+theme_override_font_sizes/font_size = 8
+text = "START"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="LabelSelect" type="Label" parent="CanvasLayer" unique_id=1627841024]
+offset_left = 100.0
+offset_top = 156.0
+offset_right = 156.0
+offset_bottom = 172.0
+theme_override_font_sizes/font_size = 8
+text = "SELECT"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="LabelA" type="Label" parent="CanvasLayer" unique_id=1280472471]
+offset_left = 232.0
+offset_top = 128.0
+offset_right = 272.0
+offset_bottom = 168.0
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="LabelB" type="Label" parent="CanvasLayer" unique_id=887851990]
+offset_left = 272.0
+offset_top = 88.0
+offset_right = 312.0
+offset_bottom = 128.0
+text = "B"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true

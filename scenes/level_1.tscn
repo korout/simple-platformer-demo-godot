@@ -1,11 +1,12 @@
 [gd_scene format=4 uid="uid://dkech5tm205l6"]
 
 [ext_resource type="PackedScene" uid="uid://bo6eg30m500a7" path="res://nodes/player.tscn" id="1_2y5yt"]
+[ext_resource type="Script" uid="uid://bn1082woekpbr" path="res://scripts/game_system.gd" id="1_pa8r4"]
 [ext_resource type="Texture2D" uid="uid://df0k7tqbv6ygx" path="res://sprites/tilemap.png" id="2_bswci"]
 [ext_resource type="PackedScene" uid="uid://iul4qmjyohky" path="res://nodes/coin.tscn" id="4_fcfvj"]
 [ext_resource type="PackedScene" uid="uid://nwo75i3hy38m" path="res://nodes/ui.tscn" id="5_fcfvj"]
 [ext_resource type="Texture2D" uid="uid://r31oeetebgry" path="res://sprites/bg.png" id="6_fcfvj"]
-[ext_resource type="PackedScene" uid="uid://bae6mpkkx5ake" path="res://scenes/level_manager.tscn" id="8_15mv3"]
+[ext_resource type="PackedScene" uid="uid://bae6mpkkx5ake" path="res://nodes/level_manager.tscn" id="8_15mv3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rus8k"]
 texture = ExtResource("2_bswci")
@@ -309,8 +310,9 @@ player = NodePath("../Player")
 ui = NodePath("../Ui")
 change_level = "res://scenes/level_2.tscn"
 
-[connection signal="pressed" from="Ui/Pause/Panel/HBoxContainer/Play" to="LevelManager" method="_on_pm_play_pressed"]
-[connection signal="pressed" from="Ui/Pause/Panel/HBoxContainer/Reset" to="LevelManager" method="_on_reset_pressed"]
+[node name="GameSystem" type="Node" parent="." unique_id=1937901145]
+process_mode = 3
+script = ExtResource("1_pa8r4")
 
 [editable path="Ui"]
 [editable path="LevelManager"]

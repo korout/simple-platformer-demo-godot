@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://r31oeetebgry" path="res://sprites/bg.png" id="3_ne2mo"]
 [ext_resource type="PackedScene" uid="uid://iul4qmjyohky" path="res://nodes/coin.tscn" id="4_6cvei"]
 [ext_resource type="PackedScene" uid="uid://nwo75i3hy38m" path="res://nodes/ui.tscn" id="5_que50"]
-[ext_resource type="PackedScene" uid="uid://dlt5ma3qmyki8" path="res://block_appear.tscn" id="5_y0kc7"]
-[ext_resource type="PackedScene" uid="uid://bae6mpkkx5ake" path="res://scenes/level_manager.tscn" id="6_hey2k"]
+[ext_resource type="PackedScene" uid="uid://dlt5ma3qmyki8" path="res://nodes/block_appear.tscn" id="5_y0kc7"]
+[ext_resource type="PackedScene" uid="uid://bae6mpkkx5ake" path="res://nodes/level_manager.tscn" id="6_hey2k"]
+[ext_resource type="Script" uid="uid://bn1082woekpbr" path="res://scripts/game_system.gd" id="8_ne2mo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rus8k"]
 texture = ExtResource("2_y0kc7")
@@ -363,8 +364,9 @@ change_level = "res://scenes/main_menu.tscn"
 [node name="WinArea" parent="LevelManager" index="0" unique_id=1519543442]
 position = Vector2(1592, 97)
 
-[connection signal="pressed" from="Ui/Pause/Panel/HBoxContainer/Play" to="LevelManager" method="_on_pm_play_pressed"]
-[connection signal="pressed" from="Ui/Pause/Panel/HBoxContainer/Reset" to="LevelManager" method="_on_reset_pressed"]
+[node name="GameSystem" type="Node" parent="." unique_id=1965851147]
+process_mode = 3
+script = ExtResource("8_ne2mo")
 
 [editable path="Ui"]
 [editable path="LevelManager"]

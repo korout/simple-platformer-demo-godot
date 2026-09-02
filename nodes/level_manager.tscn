@@ -6,7 +6,6 @@
 size = Vector2(18, 21)
 
 [node name="LevelManager" type="Node" unique_id=17573122]
-process_mode = 3
 script = ExtResource("1_06fa7")
 
 [node name="WinArea" type="Area2D" parent="." unique_id=1519543442]

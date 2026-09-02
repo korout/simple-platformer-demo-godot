@@ -3,19 +3,19 @@ extends CharacterBody2D
 const SPEED = 110.0
 const JUMP_VELOCITY = -280.0
 
-var perform_jump : bool
+var perform_jump: bool
 
-var health = 100
+var health: int = 100
 var coin: int
 @export var coin_label: Label
 
 @export var level_mgr: Node
 
-func _physics_process(delta):
+func _physics_process(delta: float) -> void:
 	var tween = create_tween()
 	
 	if not level_mgr.over and not level_mgr.win:
-		velocity.x = move_toward(velocity.x, SPEED * Input.get_axis("left", "right"), 20)
+		velocity.x = SPEED * Input.get_axis("left", "right")
 		if velocity.x != 0:
 			if is_on_floor(): $Body.play("walk")
 			$Body.flip_h = velocity.x > 0
@@ -24,7 +24,7 @@ func _physics_process(delta):
 	else:
 		velocity = Vector2(0, 0)
 	
-	if Input.is_action_just_pressed("jump") and perform_jump and not level_mgr.over:
+	if Input.is_action_just_pressed("a") and perform_jump and not level_mgr.over:
 		velocity.y = JUMP_VELOCITY
 		perform_jump = false
 		tween.tween_property($Body, "scale", Vector2(0.75, 1.5), 0.1)

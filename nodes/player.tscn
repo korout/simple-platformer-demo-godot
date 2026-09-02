@@ -11,13 +11,13 @@ region = Rect2(0, 0, 24, 24)
 atlas = ExtResource("2_bms3g")
 region = Rect2(24, 0, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bms3g"]
-atlas = ExtResource("2_bms3g")
-region = Rect2(0, 0, 24, 24)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_hqdnm"]
 atlas = ExtResource("2_bms3g")
 region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bms3g"]
+atlas = ExtResource("2_bms3g")
+region = Rect2(0, 0, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u63mc"]
 animations = [{
@@ -39,10 +39,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bms3g")
+"texture": SubResource("AtlasTexture_hqdnm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hqdnm")
+"texture": SubResource("AtlasTexture_bms3g")
 }],
 "loop": 1,
 "name": &"walk",
@@ -56,9 +56,9 @@ size = Vector2(20, 23)
 script = ExtResource("1_bms3g")
 
 [node name="Body" type="AnimatedSprite2D" parent="." unique_id=991429806]
-position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_u63mc")
-animation = &"idle"
+animation = &"walk"
+offset = Vector2(0, -12)
 flip_h = true
 metadata/_edit_lock_ = true
 
