@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://o8ekxoucurlb"]
+
+[ext_resource type="AudioStream" uid="uid://cgcwtolve0fjs" path="res://audio/footstep_01.ogg" id="1_yymdk"]
+[ext_resource type="AudioStream" uid="uid://cob7486v8g01e" path="res://audio/footstep_02.ogg" id="2_xhr2b"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_q3d60"]
+streams_count = 2
+stream_0/stream = ExtResource("1_yymdk")
+stream_1/stream = ExtResource("2_xhr2b")
+
+[node name="Footstep" type="AudioStreamPlayer" unique_id=560589698]
+stream = SubResource("AudioStreamRandomizer_q3d60")
+volume_db = -15.0

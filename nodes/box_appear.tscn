@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dlt5ma3qmyki8"]
+
+[ext_resource type="Script" uid="uid://dxwwykdfawx1f" path="res://scripts/box_appear.gd" id="1_1y2ve"]
+[ext_resource type="Texture2D" uid="uid://df0k7tqbv6ygx" path="res://sprites/tilemap.png" id="1_kcpww"]
+[ext_resource type="AudioStream" uid="uid://dkhliv5678b34" path="res://audio/block_appear.ogg" id="3_4f3bv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m32vx"]
+size = Vector2(18, 18)
+
+[node name="BoxAppear" type="AnimatableBody2D" unique_id=1427609160]
+script = ExtResource("1_1y2ve")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1661735193]
+texture = ExtResource("1_kcpww")
+region_enabled = true
+region_rect = Rect2(126, 36, 18, 18)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=342678995]
+shape = SubResource("RectangleShape2D_m32vx")
+metadata/_edit_lock_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=801962005]
+stream = ExtResource("3_4f3bv")
+max_distance = 300.0
+panning_strength = 3.0
+bus = &"Sfx"
+metadata/_edit_lock_ = true

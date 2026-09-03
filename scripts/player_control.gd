@@ -7,9 +7,13 @@ var perform_jump: bool
 
 var health: int = 100
 var coin: int
-@export var coin_label: Label
 
-@export var level_mgr: Node
+@onready var level_mgr: Node = $"../LevelManager"
+
+@onready var body: AnimatedSprite2D = $Body
+@onready var collision: CollisionShape2D = $Coll
+
+signal ui_coin_signal
 
 func _physics_process(delta: float) -> void:
 	var tween = create_tween()
@@ -17,10 +21,12 @@ func _physics_process(delta: float) -> void:
 	if not level_mgr.over and not level_mgr.win:
 		velocity.x = SPEED * Input.get_axis("left", "right")
 		if velocity.x != 0:
-			if is_on_floor(): $Body.play("walk")
-			$Body.flip_h = velocity.x > 0
+			if is_on_floor():
+				body.play("walk")
+				if $FootstepTimer.is_stopped(): $FootstepTimer.start()
+			body.flip_h = velocity.x > 0
 		else:
-			if is_on_floor(): $Body.play("idle")
+			if is_on_floor(): body.play("idle")
 	else:
 		velocity = Vector2(0, 0)
 	
@@ -36,16 +42,19 @@ func _physics_process(delta: float) -> void:
 		perform_jump = true
 	else:
 		velocity += get_gravity() * delta
-		$Body.play("jump")
+		body.play("jump")
 	
 	move_and_slide()
 	
-	if position.y >= 192 and not level_mgr.over:
+	if position.y >= 203 and not level_mgr.over:
 		level_mgr.over = true
 		$"/root/DamageSfx".play()
 		level_mgr.game_timeout()
 	
 	if level_mgr.over:
-		$Coll.disabled = true
+		collision.disabled = true
 	
-	coin_label.text = str(coin)
+	ui_coin_signal.emit(coin)
+
+func _on_footstep_timer_timeout() -> void:
+	$"/root/FootstepSfx".play()

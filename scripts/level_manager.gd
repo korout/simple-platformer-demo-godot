@@ -1,7 +1,7 @@
 extends Node
 
-@export var player : CharacterBody2D
-@export var ui : CanvasLayer
+@onready var player: CharacterBody2D = $"../Player"
+@onready var ui: CanvasLayer = $"../Ui"
 
 var win: bool
 var over: bool
@@ -28,3 +28,6 @@ func game_timeout() -> void:
 	await get_tree().create_timer(5.0).timeout
 	if win: get_tree().change_scene_to_file(change_level)
 	if over: get_tree().reload_current_scene()
+
+func _on_player_ui_coin_signal(coin) -> void:
+	ui.get_node("Game/CoinLabel").text = str(coin)
