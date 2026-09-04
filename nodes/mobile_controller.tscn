@@ -4,7 +4,6 @@
 script/source = "extends Node
 
 func _ready() -> void:
-	Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED
 	$CanvasLayer.visible = OS.has_feature(\"mobile\")
 "
 

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://r31oeetebgry" path="res://sprites/bg.png" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://df0k7tqbv6ygx" path="res://sprites/tilemap.png" id="2_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://bsyvk33wxoap4" path="res://sprites/character.png" id="4_wu84c"]
+[ext_resource type="AudioStream" uid="uid://beb3uvkhq7jhk" path="res://audio/bgm.ogg" id="5_8ln24"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_g7b7a"]
 outline_size = 4
@@ -475,3 +476,7 @@ offset = Vector2(0, -12)
 hframes = 2
 region_enabled = true
 region_rect = Rect2(0, 0, 48, 24)
+
+[node name="Bgm" type="AudioStreamPlayer" parent="." unique_id=1437736405]
+stream = ExtResource("5_8ln24")
+autoplay = true

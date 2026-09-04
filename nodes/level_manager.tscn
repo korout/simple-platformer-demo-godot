@@ -1,19 +1,27 @@
 [gd_scene format=3 uid="uid://bae6mpkkx5ake"]
 
 [ext_resource type="Script" uid="uid://cqs0hrhro0cux" path="res://scripts/level_manager.gd" id="1_06fa7"]
+[ext_resource type="Texture2D" uid="uid://df0k7tqbv6ygx" path="res://sprites/tilemap.png" id="2_hiwgq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g7b7a"]
 size = Vector2(18, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7b7a"]
+atlas = ExtResource("2_hiwgq")
+region = Rect2(198, 90, 18.13, 36)
 
 [node name="LevelManager" type="Node" unique_id=17573122]
 script = ExtResource("1_06fa7")
 
 [node name="WinArea" type="Area2D" parent="." unique_id=1519543442]
-position = Vector2(328, 97)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WinArea" unique_id=1810979128]
 position = Vector2(0, -10.5)
 shape = SubResource("RectangleShape2D_g7b7a")
 metadata/_edit_lock_ = true
+
+[node name="Flag" type="Sprite2D" parent="WinArea" unique_id=1592169533]
+z_index = -2
+texture = SubResource("AtlasTexture_g7b7a")
 
 [connection signal="body_entered" from="WinArea" to="." method="_on_win_area_body_entered"]

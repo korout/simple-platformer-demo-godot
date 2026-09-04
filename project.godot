@@ -16,10 +16,9 @@ config/description="✨ Simple Platformer Demo ✨
 🕹️ - Better controls with TouchScreen
 
 The game assets uses Kenney's Pixel Platformer (CC0)"
-config/version="v4.5.5"
+config/version="v4.5.7"
 run/main_scene="uid://dogn5ob1qlnvq"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-run/max_fps=60
 config/icon="uid://chbnoto6syd5h"
 
 [audio]
@@ -44,9 +43,11 @@ window/size/mode=3
 window/size/resizable=false
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
+window/vsync/vsync_mode=0
 
 [gui]
 
+theme/default_font_antialiasing=0
 theme/custom_font="uid://du6a2icvc6ud7"
 
 [input]
@@ -105,6 +106,7 @@ rendering/root_node_layout_direction=1
 
 2d/physics_engine="GodotPhysics2D"
 3d/physics_engine="Dummy"
+common/physics_interpolation=true
 
 [rendering]
 

@@ -13,13 +13,16 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if win:
+		player.body.play("idle")
 		player.velocity = Vector2(0, 0)
-		player.scale = lerp(player.scale, Vector2(0, 0), 0.1)
 		player.global_position = lerp(player.global_position, $WinArea.global_position, 0.1)
-		player.perform_jump = false
+		player.jump_active = false
 
 func _on_win_area_body_entered(body: Node2D) -> void:
+	var tween = create_tween()
+	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
 	if body.name == "Player":
+		tween.tween_property($WinArea/Flag, "position", Vector2(0, -12), 0.6)
 		win = true
 		$"/root/Success".play()
 		game_timeout()
