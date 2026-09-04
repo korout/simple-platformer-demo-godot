@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://msx7igetdv7k"]
+
+[ext_resource type="AudioStream" uid="uid://sljetatnphu8" path="res://audio/monkeys_spinning_monkeys.ogg" id="1_5enkh"]
+
+[node name="Bgm" type="AudioStreamPlayer" unique_id=2118586575]
+stream = ExtResource("1_5enkh")
+autoplay = true

@@ -11,12 +11,6 @@ config_version=5
 [application]
 
 config/name="Simple Platformer Demo"
-config/description="✨ Simple Platformer Demo ✨
-😎 - Best for beginners and your first game
-🕹️ - Better controls with TouchScreen
-
-The game assets uses Kenney's Pixel Platformer (CC0)"
-config/version="v4.5.7"
 run/main_scene="uid://dogn5ob1qlnvq"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="uid://chbnoto6syd5h"
@@ -34,20 +28,17 @@ Success="*uid://yr5kt60k1ynl"
 PressSfx="*uid://cqhj7yc3vf1q"
 MobileController="*uid://b4df1fd1gqgo3"
 FootstepSfx="*uid://o8ekxoucurlb"
+Bgm="*uid://msx7igetdv7k"
 
 [display]
 
 window/size/viewport_width=320
 window/size/viewport_height=180
 window/size/mode=3
-window/size/resizable=false
 window/stretch/mode="viewport"
-window/stretch/scale_mode="integer"
-window/vsync/vsync_mode=0
 
 [gui]
 
-theme/default_font_antialiasing=0
 theme/custom_font="uid://du6a2icvc6ud7"
 
 [input]
@@ -98,20 +89,14 @@ b={
 ]
 }
 
-[internationalization]
-
-rendering/root_node_layout_direction=1
-
 [physics]
 
 2d/physics_engine="GodotPhysics2D"
 3d/physics_engine="Dummy"
-common/physics_interpolation=true
 
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 2d/snap/snap_2d_transforms_to_pixel=true

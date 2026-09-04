@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://dkech5tm205l6"]
+[gd_scene format=4 uid="uid://dogvp6c5s2lkk"]
 
 [ext_resource type="PackedScene" uid="uid://bo6eg30m500a7" path="res://nodes/player.tscn" id="1_2y5yt"]
 [ext_resource type="Script" uid="uid://bn1082woekpbr" path="res://scripts/game_system.gd" id="1_pa8r4"]
@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://iul4qmjyohky" path="res://nodes/coin.tscn" id="4_fcfvj"]
 [ext_resource type="PackedScene" uid="uid://nwo75i3hy38m" path="res://nodes/ui.tscn" id="5_fcfvj"]
 [ext_resource type="Texture2D" uid="uid://r31oeetebgry" path="res://sprites/bg.png" id="6_fcfvj"]
+[ext_resource type="PackedScene" uid="uid://cchfaywgvqunv" path="res://scenes/level_2.tscn" id="7_e3sih"]
 [ext_resource type="PackedScene" uid="uid://bae6mpkkx5ake" path="res://nodes/level_manager.tscn" id="8_15mv3"]
 [ext_resource type="PackedScene" uid="uid://bq41vlcw30spr" path="res://nodes/monster.tscn" id="8_e3sih"]
-[ext_resource type="AudioStream" uid="uid://beb3uvkhq7jhk" path="res://audio/bgm.ogg" id="9_e3sih"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e3sih"]
 texture = ExtResource("2_bswci")
@@ -306,7 +306,7 @@ position = Vector2(288, 56)
 [node name="Ui" parent="." unique_id=139903261 instance=ExtResource("5_fcfvj")]
 
 [node name="LevelManager" parent="." unique_id=17573122 instance=ExtResource("8_15mv3")]
-change_level = "res://scenes/level_2.tscn"
+change_level = ExtResource("7_e3sih")
 
 [node name="WinArea" parent="LevelManager" index="0" unique_id=1519543442]
 position = Vector2(328, 96)
@@ -317,10 +317,6 @@ script = ExtResource("1_pa8r4")
 
 [node name="Monster" parent="." unique_id=849728192 instance=ExtResource("8_e3sih")]
 position = Vector2(159, 111)
-
-[node name="Bgm" type="AudioStreamPlayer" parent="." unique_id=1571566711]
-stream = ExtResource("9_e3sih")
-autoplay = true
 
 [connection signal="ui_coin_signal" from="Player" to="LevelManager" method="_on_player_ui_coin_signal"]
 

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dslgoxebgdmsh"]
+
+[node name="Level3" type="Node" unique_id=983602952]
+
+[node name="Label" type="Label" parent="." unique_id=1020230313]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "and you can make a game now !"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true

@@ -6,7 +6,7 @@ extends Node
 var win: bool
 var over: bool
 
-@export var change_level: String
+@export var change_level: PackedScene
 
 func _ready() -> void:
 	get_tree().paused = false
@@ -29,7 +29,7 @@ func _on_win_area_body_entered(body: Node2D) -> void:
 
 func game_timeout() -> void:
 	await get_tree().create_timer(5.0).timeout
-	if win: get_tree().change_scene_to_file(change_level)
+	if win: get_tree().change_scene_to_packed(change_level)
 	if over: get_tree().reload_current_scene()
 
 func _on_player_ui_coin_signal(coin) -> void:
